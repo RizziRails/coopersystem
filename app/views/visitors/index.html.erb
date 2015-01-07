@@ -1,2 +1,58 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+
+<% if user_signed_in? %>
+
+  <% if current_user.admin? %>
+  <tbody>
+	
+			<h3> Statistics </h3>	
+	
+         <p><%= link_to 'Users :', users_path %> <%= User.count %></p> &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+
+    
+ 	 &nbsp;&nbsp;&nbsp;&nbsp;	
+		<%= image_tag "Administrador2.jpeg" %>
+	
+		
+
+
+
+	
+	
+      <%elsif%>
+       <% if current_user.vip? %>
+	   
+				&nbsp;&nbsp;&nbsp;&nbsp;	
+  		  <%= image_tag "vip_user.jpeg" %>
+ 
+ 
+      <% else %>
+  
+ 			<div class="body">
+            	&nbsp;&nbsp;&nbsp;&nbsp;	
+
+			<%= image_tag "usuario.jpg" %>
+	
+	
+  	  <% end %>
+    <% end %>
+  
+  
+  
+<% else %>
+
+<h2 align='center' ><i>COOPERSYSTEM</i></h2>
+<h3 align='center'><i>Acompanhe o seu lote ou estoque em conjunto com a sua cooperativa</i></h3>
+&nbsp; 
+    <%= image_tag "quimico.jpeg",
+	          
+	        :width => "50%",
+	        :height => "50%"
+			%>
+
+	<h4 align='center'>Contacte-nos através do telefone:55-11-9-8384-6364</h4> 
+
+<% end %>
+

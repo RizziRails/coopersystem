@@ -1,0 +1,90 @@
+
+<h2 align='center'>Produto Acabado ( Fórmula para 1 litro de produto)</h2>
+
+
+
+<h1 align='center'>
+  <strong align='center'>
+  <%= @formula.nome %></strong>
+</h1>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @formula.obs %>
+</p>
+<p>
+<hr width=50% color=navy size=4 align=left>
+</p>
+
+
+
+<h2>Formulação</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+	
+		<th>Formula</th>
+      <th>Matéria Prima</th>
+      <th>Qtde</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+
+  <tbody>
+    <% @formula.lista_prods.each do |lista_prod| %>
+      <tr>	  
+	    <td><%= lista_prod.formula.nome%></td>
+        <td><%= lista_prod.mp.nome %></td>
+        <td><%= lista_prod.qtde %> ml</td>
+        <td><%= link_to 'Edit', edit_lista_prod_path(lista_prod) %></td>
+        <td><%= link_to 'Destroy', lista_prod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+	   <tr> 
+		   <td> </td>
+		   <td align='right'>Total do volume: </td>
+		   <td><%= @formula.lista_prods.sum(:qtde)%> ml</td>
+		   <td> </td>
+		   <td> </td>
+	   </tr>
+	
+	
+	 
+	
+  </tbody>
+</table>
+
+
+
+
+ <h2>Adicione uma Matéria Prima </h2>
+ <%= form_for([@formula, @formula.lista_prods.build]) do |f| %>
+ 
+ <div class="field">
+	 <%= f.hidden_field :formula_id %>
+ </div>
+ 
+ 
+ <div class="field">
+   <%= f.label :mp_id, 'Matéria Prima' %><br>
+   <%= f.collection_select(:mp_id ,  Mp.all.order(:id), :id, :nome, {:prompt => "Selecione a Matéria Prima"})%> 
+ </div>
+ <div class="field">
+   <%= f.label :qtde,'Quantidade em mls'%><br>
+   <%= f.text_field :qtde %>
+ </div>
+ 
+ 
+  
+  <p>
+    <%= f.submit  %>
+  </p>
+<% end %>
+
+
+
+
+
+<%= link_to 'Edit', edit_formula_path(@formula) %> |
+<%= link_to 'Back', formulas_path %>

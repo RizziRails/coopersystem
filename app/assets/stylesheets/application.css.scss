@@ -13,3 +13,114 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   color: #2C3539;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 14px;
+   line-height: 20px;
+   width: 90%;
+   height: 1000px;
+   float: left;
+   margin-left: 5%;
+}
+
+space {
+   color: #0033FF;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 20px;
+   width: 100%;
+   height: 5%;
+   float: left;
+   margin-left: 5%;
+
+}
+
+
+
+ind {
+   color: #0033FF;
+   font-family: helvetica, sans-serif;
+   font-size: 12px;
+   line-height: 18px;
+   width: 30 px;
+   height: 50px;
+   float: left;
+   margin-left: 5%;
+   margin-right: 5%;
+   background: #FF0099;
+
+}
+
+
+h1 {
+   color: #0020C2;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 28px;
+   font-style: oblique
+   }
+   
+h2 {
+   	color: #0020C2;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 24px;
+    font-style: oblique
+ }   
+
+h3 {
+	color: #66CCCC;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 16px;
+   font-style: oblique
+
+}
+
+h4 { 
+
+color: #66CCCC;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 16px;
+   font-style: oblique
+
+}
+
+
+h5 { 
+
+color: #4f6962;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 16px;
+   font-style: oblique
+
+}
+
+select{
+   color: #4f6962;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 30px;
+   font-style: oblique;
+   
+}
+
+table{
+  color: #1C50B0;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 22px;
+  font-style: oblique;
+  
+}
+
+p{
+  color: #1D2EEC;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 18px;
+  font-style: oblique;
+
+}
+
+E {
+   color: #0020C2;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 36px;
+   font-style: oblique
+   }

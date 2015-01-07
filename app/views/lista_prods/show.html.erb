@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Formula:</strong>
+  <%= @lista_prod.formula.nome %>
+</p>
+
+<p>
+  <strong>Mp:</strong>
+  <%= @lista_prod.mp.apelido %>
+</p>
+
+<p>
+  <strong>Qtde:</strong>
+  <%= @lista_prod.qtde %> ml
+</p>
+
+<%= link_to 'Edit', edit_lista_prod_path(@lista_prod) %> |
+<%= link_to 'Back', lista_prods_path %>

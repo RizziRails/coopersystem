@@ -1,0 +1,31 @@
+<%= form_for(@mp) do |f| %>
+  <% if @mp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mp.errors.count, "error") %> prohibited this mp from being saved:</h2>
+
+      <ul>
+      <% @mp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :apelido %><br>
+    <%= f.text_field :apelido %>
+  </div>
+  <div class="field">
+    <%= f.label :unidade_id %><br>
+	<%= f.collection_select(:unidade_id ,  Unidade.all.order(:id), :id, :nome, {:prompt => "Selecione a Unidade"})%> 
+
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

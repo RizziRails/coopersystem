@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @mp.nome %>
+</p>
+
+<p>
+  <strong>Apelido:</strong>
+  <%= @mp.apelido %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <%= @mp.unidade.sigla%>
+</p>
+
+<%= link_to 'Edit', edit_mp_path(@mp) %> |
+<%= link_to 'Back', mps_path %>

@@ -1,0 +1,26 @@
+<%= form_for(@formula) do |f| %>
+  <% if @formula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@formula.errors.count, "error") %> prohibited this formula from being saved:</h2>
+
+      <ul>
+      <% @formula.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

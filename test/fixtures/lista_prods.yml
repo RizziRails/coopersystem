@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  formula_id: 1
+  mp_id: 1
+  qtde: 9.99
+
+two:
+  formula_id: 1
+  mp_id: 1
+  qtde: 9.99

@@ -1,0 +1,29 @@
+<h1>Lista de Materias Primas</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Formula</th>
+      <th>Matéria Prima</th>
+      <th>Qtde</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lista_prods.each do |lista_prod| %>
+      <tr>
+        <td><%= lista_prod.formula_id%></td>
+        <td><%= lista_prod.mp.nome %></td>
+        <td><%= lista_prod.qtde %></td>
+        <td><%= link_to 'Show', lista_prod %></td>
+        <td><%= link_to 'Edit', edit_lista_prod_path(lista_prod) %></td>
+        <td><%= link_to 'Destroy', lista_prod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lista prod', new_lista_prod_path %>

@@ -1,0 +1,34 @@
+<%= form_for(@lista_prod) do |f| %>
+  <% if @lista_prod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lista_prod.errors.count, "error") %> prohibited this lista_prod from being saved:</h2>
+
+      <ul>
+      <% @lista_prod.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :formula_id, 'Formula' %><br>
+	<%= f.collection_select(:formula_id ,  Formula.all.order(:id), :id, :nome, {:prompt => "Selecione a formula"})%> 
+
+  </div>
+  <div class="field">
+    <%= f.label :mp_id, 'Matéria Prima' %><br>
+	<%= f.collection_select(:mp_id ,  Mp.all.order(:id), :id, :nome, {:prompt => "Selecione a Matéria Prima"})%> 
+  </div>
+  <div class="field">
+    <%= f.label :qtde,'Quantidade em mls'%><br>
+    <%= f.text_field :qtde %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+  
+  
+<% end %>
