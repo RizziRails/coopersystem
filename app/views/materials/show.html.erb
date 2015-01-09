@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @material.tipo %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @material.obs %>
+</p>
+
+<%= link_to 'Editar', edit_material_path(@material) %> |
+<%= link_to 'Voltar', materials_path %>

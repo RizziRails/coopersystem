@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @embalagem.tipo.tipo %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @embalagem.material.tipo %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @embalagem.volume %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <%= @embalagem.unidade.sigla %>
+</p>
+
+
+
+
+
+<p>
+  <strong>Caracteristicas:</strong>
+  <%= @embalagem.caracteristicas %>
+</p>
+
+
+
+<%= link_to 'Editar', edit_embalagem_path(@embalagem) %> |
+<%= link_to 'Voltar', embalagens_path %>

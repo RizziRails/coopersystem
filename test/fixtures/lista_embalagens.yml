@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  batch_id: 
+  qtde: 1
+  embalagem_id: 
+
+two:
+  batch_id: 
+  qtde: 1
+  embalagem_id: 

@@ -25,6 +25,23 @@ Formula.create( nome: 'Limpa Vidro')
 Formula.create( nome: 'Água Sanitária')
 Formula.create( nome: 'Limpa Pedra')
 
+Tipo.create( tipo: 'Garrafa')
+Tipo.create( tipo: 'Galão')
+Tipo.create( tipo: 'Tambor')
+Tipo.create( tipo: 'Balde')
+
+Material.create( tipo: 'Plástico')
+Material.create( tipo: 'Vidro')
+Material.create( tipo: 'Pet')
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Batch:</strong>
+  <%= @lista_embalagem.batch %>
+</p>
+
+<p>
+  <strong>Qtde:</strong>
+  <%= @lista_embalagem.qtde %>
+</p>
+
+<p>
+  <strong>Embalagem:</strong>
+  <%= @lista_embalagem.embalagem %>
+</p>
+
+<%= link_to 'Editar', edit_lista_embalagem_path(@lista_embalagem) %> |
+<%= link_to 'Voltar', lista_embalagens_path %>

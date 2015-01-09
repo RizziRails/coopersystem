@@ -40,8 +40,8 @@
 	    <td><%= lista_prod.formula.nome%></td>
         <td><%= lista_prod.mp.nome %></td>
         <td><%= lista_prod.qtde %> ml</td>
-        <td><%= link_to 'Edit', edit_lista_prod_path(lista_prod) %></td>
-        <td><%= link_to 'Destroy', lista_prod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_lista_prod_path(lista_prod) %></td>
+        <td><%= link_to 'Voltar', lista_prod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
 	   <tr> 
@@ -89,5 +89,5 @@
 
 
 
-<%= link_to 'Edit', edit_formula_path(@formula) %> |
-<%= link_to 'Back', formulas_path %>
+<%= link_to 'Editar', edit_formula_path(@formula) %> |
+<%= link_to 'Voltar', formulas_path %>

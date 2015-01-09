@@ -1,3 +1,15 @@
+
+<td>
+  <ul class= "nav nav-pills">
+    <li class= "active ">
+      <%= link_to '+', new_batch_path %>
+    </li>
+  </ul>
+</td>
+
+
+
+
 <h1>Lista de batches</h1>
 
 <table class="table table-striped">
@@ -22,16 +34,35 @@
 		<td><%= batch.formula.nome%>
         <td><%= batch.data_entrega %></td>
         <td><%= batch.volume %> </td>
-	
+
+     	<td>
+        <ul class="nav nav-pills">
+          <li class="active">
+            <%= link_to 'Show', batch %>
+          </li>
+        </ul>
+      </td>
+
+      <td>
+        <ul class= "nav nav-pills">
+          <li class= "active">
+            <%= link_to 'Edit', edit_batch_path(batch) %>
+            
+          </li>
+        </ul>
+      </td>
    
-        <td><%= link_to 'Show', batch %></td>
-        <td><%= link_to 'Edit', edit_batch_path(batch) %></td>
-        <td><%= link_to 'Destroy', batch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+       <td>
+         <ul class="nav nav-pills">
+           <li class= "active">
+             <%= link_to 'Destroy', batch, method: :delete, data: { confirm: 'Are you sure?' } %>
+           </li>
+         </ul>
+       </td> 
+              </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Batch', new_batch_path %>

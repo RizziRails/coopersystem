@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  volume: 9.99
+  caracteristicas: MyText
+  tipo_id: 
+  material_id: 
+  unidade_id: 
+
+two:
+  volume: 9.99
+  caracteristicas: MyText
+  tipo_id: 
+  material_id: 
+  unidade_id: 

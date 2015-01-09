@@ -1,0 +1,2 @@
+module EmbalagensHelper
+end

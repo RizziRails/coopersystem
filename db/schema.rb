@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107171359) do
+ActiveRecord::Schema.define(version: 20150109105442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,12 +29,37 @@ ActiveRecord::Schema.define(version: 20150107171359) do
   add_index "batches", ["formula_id"], name: "index_batches_on_formula_id", using: :btree
   add_index "batches", ["mp_id"], name: "index_batches_on_mp_id", using: :btree
 
+  create_table "embalagens", force: true do |t|
+    t.decimal  "volume"
+    t.text     "caracteristicas"
+    t.integer  "tipo_id"
+    t.integer  "material_id"
+    t.integer  "unidade_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "embalagens", ["material_id"], name: "index_embalagens_on_material_id", using: :btree
+  add_index "embalagens", ["tipo_id"], name: "index_embalagens_on_tipo_id", using: :btree
+  add_index "embalagens", ["unidade_id"], name: "index_embalagens_on_unidade_id", using: :btree
+
   create_table "formulas", force: true do |t|
     t.string   "nome"
     t.text     "obs"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "lista_embalagens", force: true do |t|
+    t.integer  "batch_id"
+    t.integer  "qtde"
+    t.integer  "embalagem_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lista_embalagens", ["batch_id"], name: "index_lista_embalagens_on_batch_id", using: :btree
+  add_index "lista_embalagens", ["embalagem_id"], name: "index_lista_embalagens_on_embalagem_id", using: :btree
 
   create_table "lista_form_mps", force: true do |t|
     t.decimal  "quant",      precision: 8, scale: 2
@@ -57,6 +82,13 @@ ActiveRecord::Schema.define(version: 20150107171359) do
     t.datetime "updated_at"
   end
 
+  create_table "materials", force: true do |t|
+    t.string   "tipo"
+    t.string   "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "mps", force: true do |t|
     t.string   "nome"
     t.string   "apelido"
@@ -66,6 +98,13 @@ ActiveRecord::Schema.define(version: 20150107171359) do
   end
 
   add_index "mps", ["unidade_id"], name: "index_mps_on_unidade_id", using: :btree
+
+  create_table "tipos", force: true do |t|
+    t.string   "tipo"
+    t.string   "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "unidades", force: true do |t|
     t.string   "nome"

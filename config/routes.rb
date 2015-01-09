@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  resources :lista_embalagens
+
+  resources :embalagens
+
+  resources :materials
+
+  resources :tipos
+
   resources :batches do
     resources :lista_prods
   end

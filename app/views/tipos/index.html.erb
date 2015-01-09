@@ -1,0 +1,59 @@
+<td>
+  <ul class="nav nav-pills">
+    <li class= "active">
+      <%= link_to '+', new_tipo_path %>
+      
+    </li>
+  </ul>
+</td>
+
+
+<h1>Lista de tipos de Frascos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipos.each do |tipo| %>
+      <tr>
+        <td><%= tipo.tipo %></td>
+
+        <td>
+          <ul class="nav nav-pills">
+            <li class= "active">
+               <%= link_to 'Show', tipo %>
+            </li>
+          </ul>
+        </td>
+
+        <td>
+          <ul class="nav nav-pills">
+            <li class= "active">
+              <%= link_to 'Edit', edit_tipo_path(tipo) %>
+            </li>
+          </ul>
+        </td>
+
+         <td>
+          <ul class="nav nav-pills">
+            <li class= "active">
+              <%= link_to 'Destroy', tipo, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li>
+          </ul>
+        </td>
+
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

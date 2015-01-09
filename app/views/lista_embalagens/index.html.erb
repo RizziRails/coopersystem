@@ -1,0 +1,29 @@
+<h1>Relação de embalagens utilizadas no Batch </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Batch</th>
+      <th>Qtde</th>
+      <th>Embalagem</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lista_embalagens.each do |lista_embalagem| %>
+      <tr>
+        <td><%= lista_embalagem.batch %></td>
+        <td><%= lista_embalagem.qtde %></td>
+        <td><%= lista_embalagem.embalagem %></td>
+        <td><%= link_to 'Show', lista_embalagem %></td>
+        <td><%= link_to 'Edit', edit_lista_embalagem_path(lista_embalagem) %></td>
+        <td><%= link_to 'Destroy', lista_embalagem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lista embalagem', new_lista_embalagem_path %>

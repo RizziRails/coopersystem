@@ -1,0 +1,29 @@
+<%= form_for(@lista_embalagem) do |f| %>
+  <% if @lista_embalagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lista_embalagem.errors.count, "error") %> prohibited this lista_embalagem from being saved:</h2>
+
+      <ul>
+      <% @lista_embalagem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :batch_id %><br>
+    <%= f.text_field :batch_id %>
+  </div>
+  <div class="field">
+    <%= f.label :qtde %><br>
+    <%= f.number_field :qtde %>
+  </div>
+  <div class="field">
+    <%= f.label :embalagem_id %><br>
+    <%= f.text_field :embalagem_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

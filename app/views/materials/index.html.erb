@@ -1,0 +1,60 @@
+<td>
+  <ul class="nav nav-pills">
+    <li class= "active">
+       <%= link_to '+', new_material_path %>
+    </li>
+  </ul>
+</td>
+
+
+
+<h1>Lista de  materiais</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Obs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.tipo %></td>
+        <td><%= material.obs %></td>
+
+        <td>
+          <ul class="nav nav-pills">
+            <li class= "active">
+              <%= link_to 'Show', material %>
+            </li>
+          </ul>
+        </td>
+                <td>
+          <ul class="nav nav-pills">
+            <li class= "active">
+              <%= link_to 'Edit', edit_material_path(material) %>
+            </li>
+          </ul>
+        </td>
+
+                <td>
+          <ul class="nav nav-pills">
+            <li class= "active">
+              <%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li>
+          </ul>
+        </td>
+
+
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

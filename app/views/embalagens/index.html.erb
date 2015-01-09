@@ -1,0 +1,71 @@
+<td>
+  <ul class="nav nav-pills">
+    <li class= "active">
+      <%= link_to '+', new_embalagem_path %>
+      
+    </li>
+  </ul>
+</td>
+
+
+
+
+
+<h1>Embalagens disponíveis </h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th>Tipo</th>
+      <th>Volume</th>
+      <th>Unidade</th>
+      <th>Material</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @embalagens.each do |embalagem| %>
+      <tr>
+       
+    
+        <td><%= embalagem.tipo.tipo %></td>
+        <td><%= embalagem.volume %></td>
+        <td><%= embalagem.unidade.nome %></td>
+        <td><%= embalagem.material.tipo %></td>
+        <td>
+          <ul class="nav nav-pills">
+            <li class="active">
+              <%= link_to 'Mostrar', embalagem %>              
+            </li>
+          </ul>
+        </td>
+
+        <td>
+          <ul class="nav nav-pills">
+            <li class="active">
+              <%= link_to 'Editar', edit_embalagem_path(embalagem) %>
+            </li>
+          </ul>
+        </td>
+
+         
+         <td>
+           <ul class="nav nav-pills">
+             <li class="active">
+               <%= link_to 'Deletar', embalagem, method: :delete, data: { confirm: 'Are you sure?' } %>
+             </li>
+           </ul>
+         </td>
+
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+

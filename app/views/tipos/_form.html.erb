@@ -1,0 +1,25 @@
+<%= form_for(@tipo) do |f| %>
+  <% if @tipo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo.errors.count, "error") %> prohibited this tipo from being saved:</h2>
+
+      <ul>
+      <% @tipo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_field :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

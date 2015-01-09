@@ -1,0 +1,42 @@
+<%= form_for(@embalagem) do |f| %>
+  <% if @embalagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@embalagem.errors.count, "error") %> prohibited this embalagem from being saved:</h2>
+
+      <ul>
+      <% @embalagem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :volume %><br>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :unidade_id %><br>
+    <%= f.collection_select(:unidade_id, Unidade.all.order(:id), :id, :nome, {:prompt => "Selecione a unidade para o volume "})%> 
+  </div>
+  
+  <div class="field">
+    <%= f.label :tipo_id %><br>
+    <%= f.collection_select(:tipo_id ,  Tipo.all.order(:id), :id, :tipo, {:prompt => "Selecione o tipo de embalagem"})%>
+  </div>
+  <div class="field">
+    <%= f.label :material_id %><br>
+    <%= f.collection_select(:material_id, Material.all.order(:id), :id, :tipo, {:prompt => "Selecione o material da embalagem"})%>
+  </div>
+
+  <div class="field">
+    <%= f.label :caracteristicas %><br>
+    <%= f.text_area :caracteristicas %>
+  </div>
+
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
