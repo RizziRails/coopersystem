@@ -1,0 +1,41 @@
+<%= form_for(@batch) do |f| %>
+  <% if @batch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@batch.errors.count, "error") %> prohibited this batch from being saved:</h2>
+
+      <ul>
+      <% @batch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :data_entrega %><br>
+    <%= f.date_select :data_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :volume, 'Volume em litros' %><br>
+    <%= f.text_field :volume %>
+  </div>
+  
+  
+  
+
+  
+  
+  <div class="field">
+    <%= f.label :formula_id, 'Formula a ser processada' %><br>
+	<%= f.collection_select(:formula_id ,  Formula.all.order(:id), :id, :nome, {:prompt => "Selecione a formula"})%> 
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<h1>Lista de batches</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Data</th>
+	  <th>Batch -No </th>
+	  <th>Produto</th>
+      <th>Entrega</th>
+      <th>Volume(lt)</th>
+	
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @batches.each do |batch| %>
+      <tr>
+        <td><%= batch.data %></td>
+		<td><%= batch.created_at.to_i%></td>
+		<td><%= batch.formula.nome%>
+        <td><%= batch.data_entrega %></td>
+        <td><%= batch.volume %> </td>
+	
+   
+        <td><%= link_to 'Show', batch %></td>
+        <td><%= link_to 'Edit', edit_batch_path(batch) %></td>
+        <td><%= link_to 'Destroy', batch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Batch', new_batch_path %>

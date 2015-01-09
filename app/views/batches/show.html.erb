@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align='center'> <strong><%= @batch.formula.nome %></strong></h1>
+
+
+<p align= 'right'>
+	<strong> Número do Lote:</strong>
+	<%=  @batch.created_at.to_i %></br>
+	<strong> Data:</strong>
+	<%=  l(@batch.data) %>
+	
+	
+</p>
+
+<p>
+  <strong>Formula/Produto:</strong>
+  <%= @batch.formula.nome %>
+</p>
+
+
+
+<p>
+  <strong>Data entrega:</strong>
+  <%= l(@batch.data_entrega) %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @batch.volume %> Lts
+</p>
+
+
+<%= link_to 'Edit', edit_batch_path(@batch) %> |
+<%= link_to 'Back', batches_path %>
+
+
+
+
+<h1>Lista de Materias Primas para o Batch </h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Formula</th>
+      <th>Matéria Prima</th>
+      <th>Qtde</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lista.each do |lista| %>
+      <tr>
+        <td><%= lista.formula.nome%></td>
+        <td><%= lista.mp.nome %></td>
+        <td><%= (lista.qtde/1000)*@batch.volume %> lts</td>
+        
+      </tr>
+	  
+	  
+    <% end %>
+	
+  </tbody>
+</table>
+
+<br>

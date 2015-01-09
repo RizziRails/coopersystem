@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :batches do
+    resources :lista_prods
+  end
+
   resources :lista_prods do
     resources :formulas
   end

@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106181110) do
+ActiveRecord::Schema.define(version: 20150107171359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "batches", force: true do |t|
+    t.date     "data"
+    t.date     "data_entrega"
+    t.decimal  "volume",       precision: 10, scale: 2
+    t.integer  "formula_id"
+    t.integer  "mp_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "batches", ["formula_id"], name: "index_batches_on_formula_id", using: :btree
+  add_index "batches", ["mp_id"], name: "index_batches_on_mp_id", using: :btree
 
   create_table "formulas", force: true do |t|
     t.string   "nome"
