@@ -34,7 +34,8 @@ Apartment.configure do |config|
 
   # supply list of database names for migrations to run on
   #config.tenant_names = lambda{ ToDo_Tenant_Or_User_Model.pluck :database }
-   config.tenant_names = [ 'teste', 'cooperuni','lever']
+   #config.tenant_names = [ 'teste', 'cooperuni','lever']
+   config.tenant_names = lambda{ Customer.pluck(:teste, :cooperuni, :lever) }
 end
 
 ##
