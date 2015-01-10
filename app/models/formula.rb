@@ -4,6 +4,7 @@ class Formula < ActiveRecord::Base
   has_many :mps, :through => :lista_prods
   has_many :batches
   
+  validates_presence_of :nome
   
   
   

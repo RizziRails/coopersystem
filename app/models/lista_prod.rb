@@ -6,5 +6,8 @@ class ListaProd < ActiveRecord::Base
   has_many :ofs
   
   belongs_to :batch
+  validates_presence_of :formula_id, :mp_id, :qtde
+  validates_numericality_of :qtde
+  
   
 end
