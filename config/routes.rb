@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :tipos
 
   resources :batches do
+    resources :embalagens
     resources :lista_prods
   end
 

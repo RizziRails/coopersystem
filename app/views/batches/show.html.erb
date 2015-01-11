@@ -43,26 +43,39 @@
       <th>Formula</th>
       <th>Matéria Prima</th>
       <th>Qtde</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
-
+            <% @acu = 0  %>
   <tbody>
     <% @lista.each do |lista| %>
       <tr>
         <td><%= lista.formula.nome%></td>
         <td><%= lista.mp.nome %></td>
-        <td><%= (lista.qtde/1000)*@batch.volume %> lts</td>
+        <td><%=  @a = (lista.qtde/1000)*@batch.volume %> lts</td>
+        <% @acu = @a +@acu %>
+
+
         
       </tr>
 	  
-	  
+
     <% end %>
+        <tr>
+           <td></td>
+           <td align= 'right'><h3>Soma total dos volumes =</h3></td>
+           <td><h3><%= @acu %> lts</h3></td>
+         </tr>
 	
   </tbody>
 </table>
+
+
+          
+
 
 <br>
 
 <%= link_to 'Editar', edit_batch_path(@batch) %> |
 <%= link_to 'Voltar', batches_path %>
+
+<hr>

@@ -68,7 +68,7 @@ h2 {
  }   
 
 h3 {
-	color: #66CCCC;
+	color: #0020C2;
    font-family: verdana, arial, helvetica, sans-serif;
    font-size: 16px;
    font-style: oblique
@@ -124,3 +124,11 @@ E {
    font-size: 36px;
    font-style: oblique
    }
+
+hr {
+  width: 100%;
+  text-align: right; /* Para o IE */
+  margin-right:0 0 0 auto; /* Para navegadores standard */
+  border-top-width: 2px;
+  border-color: #191970;
+  }   

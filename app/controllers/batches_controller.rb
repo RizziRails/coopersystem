@@ -4,6 +4,7 @@ class BatchesController < ApplicationController
 
   respond_to :html
 
+ 
 
 
   def set_lista

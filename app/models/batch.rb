@@ -3,6 +3,7 @@ class Batch < ActiveRecord::Base
   belongs_to :mp
   has_many :formulas
   has_many :lista_prods
+  has_many :embalagens
   belongs_to :lista_prod
   
   validates_presence_of :volume
