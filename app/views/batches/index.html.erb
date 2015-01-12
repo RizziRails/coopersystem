@@ -29,8 +29,8 @@
   <tbody>
     <% @batches.each do |batch| %>
       <tr>
-        <td><%= batch.data %></td>
-		<td><%= batch.created_at.to_i%></td>
+        <td><%= l(batch.data) %></td>
+		<td><%= batch.numero%></td>
 		<td><%= batch.formula.nome%>
         <td><%= batch.data_entrega %></td>
         <td><%= batch.volume %> </td>

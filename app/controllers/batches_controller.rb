@@ -1,11 +1,11 @@
 class BatchesController < ApplicationController
   before_action :set_batch, only: [:show, :edit, :update, :destroy]
   before_action :set_lista, only: [:show]
+  
 
   respond_to :html
 
  
-
 
   def set_lista
     @lista = ListaProd.where("formula_id = ? " , @batch.formula_id)
@@ -36,7 +36,7 @@ class BatchesController < ApplicationController
   end
 
   def update
-    flash[:notice] = 'Batch was successfully updated.' if @batch.update(batch_params)
+    @batch.update(batch_params)
     respond_with(@batch)
   end
 
@@ -51,6 +51,6 @@ class BatchesController < ApplicationController
     end
 
     def batch_params
-      params.require(:batch).permit(:data, :data_entrega, :volume, :formula_id, :mp_id)
+      params.require(:batch).permit(:data, :numero, :data_entrega, :volume, :formula_id, :mp_id)
     end
 end

@@ -1,16 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+ 
+
+
 <h1 align='center'> <strong><%= @batch.formula.nome %></strong></h1>
 
 
-<p align= 'right'>
-	<strong> Número do Lote:</strong>
+<h2 align='right'>
+  <strong>  Batch  Nr:</strong>
 	<%=  @batch.created_at.to_i %></br>
 	<strong> Data:</strong>
 	<%=  l(@batch.data) %>
 	
 	
-</p>
+</h2>
 
 <p>
   <strong>Formula/Produto:</strong>
@@ -78,4 +81,28 @@
 <%= link_to 'Editar', edit_batch_path(@batch) %> |
 <%= link_to 'Voltar', batches_path %>
 
+
+
+
+
 <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

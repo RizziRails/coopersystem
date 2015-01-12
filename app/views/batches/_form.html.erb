@@ -10,11 +10,18 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :numero, 'Número do Lote'%><br>
+    <%= f.text_field :numero %>
+  </div>
 
   <div class="field">
     <%= f.label :data %><br>
     <%= f.date_select :data %>
   </div>
+  
+  
   <div class="field">
     <%= f.label :data_entrega %><br>
     <%= f.date_select :data_entrega %>

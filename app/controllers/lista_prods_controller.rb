@@ -28,15 +28,16 @@ class ListaProdsController < ApplicationController
 
   def create
     @formula = Formula.find(params[:formula_id])
-   # @lista_prod = @formula.lista_prods.create(lista_prods_params)
-   # redirect_to formula_path(@formula)
+   
     
     @lista_prod = ListaProd.new(lista_prod_params)
     flash[:notice] = 'Item criado com sucesso !' if @lista_prod.save
-    #respond_with(@lista_prod)
+    
     redirect_to formula_path(@formula)
      
   end
+
+
 
   def update
     @lista_prod.update(lista_prod_params)
