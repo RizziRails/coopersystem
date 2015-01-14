@@ -1,7 +1,9 @@
 class Mp < ActiveRecord::Base
-  has_many :lista_prods
+  has_many :lista_prods, dependent: :destroy
   has_many :formulas, :through => :lista_prods
-  has_many :batches  
+  has_many :batches
+  has_many :entradas, dependent: :destroy
+  has_many :saidas , dependent: :destroy
   
  
   

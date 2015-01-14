@@ -7,8 +7,10 @@
 
 
 <h2 align='right'>
+  <strong>  Batch  Id:</strong>
+  <%=  @batch.id %></br>
   <strong>  Batch  Nr:</strong>
-	<%=  @batch.created_at.to_i %></br>
+	<%=  @batch.numero %></br>
 	<strong> Data:</strong>
 	<%=  l(@batch.data) %>
 	
@@ -43,7 +45,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Formula</th>
       <th>Matéria Prima</th>
       <th>Qtde</th>
     </tr>
@@ -52,11 +53,11 @@
   <tbody>
     <% @lista.each do |lista| %>
       <tr>
-        <td><%= lista.formula.nome%></td>
         <td><%= lista.mp.nome %></td>
         <td><%=  @a = (lista.qtde/1000)*@batch.volume %> lts</td>
         <% @acu = @a +@acu %>
-
+        <td></td>
+        <td></td>
 
         
       </tr>
@@ -81,14 +82,89 @@
 <%= link_to 'Editar', edit_batch_path(@batch) %> |
 <%= link_to 'Voltar', batches_path %>
 
+<hr>
 
+<h2>Lista de Embalagens para o Batch</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+  
+      <th>Vol.p/envase</th>
+      <th>Embalagem</th>
+      <th>Material</th>
+      <th>Qtde Emb</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  
+  
+  
+
+  <tbody>
+    <% @batch.lista_embalagens.each do |lista_emb| %>
+      <tr>    
+        <td><%= lista_emb.qtde%> litros</td>
+        <td><%= lista_emb.embalagem.tipo.tipo %> de <%= lista_emb.embalagem.volume%> <%= lista_emb.embalagem.unidade.nome%></td>
+        <td><%= lista_emb.embalagem.material.tipo %> </td>
+        <td><%= lista_emb.qtde / lista_emb.embalagem.volume %></td>
+        
+      </tr>
+    <% end %>
+
+     <tr> 
+       <td><h3><%= @vtot = @batch.lista_embalagens.sum(:qtde)%> lts => Total envasado</h3></td> 
+       <td></td>
+       <td></td>
+        <td></td>
+
+
+     <tr>
+      
+       <td><h3><%= @vf = (@batch.volume - @vtot).to_i %> lts => Falta p/ envasar </h3></td>
+              <td></td>
+       <td></td>
+       <td></td>
+
+     </tr>
+       
+       
+  
+  
+   
+  
+  </tbody>
+</table>
 
 
 
 <hr>
 
+ <h2>Adicione as embalagens para o Batch</h2>
+
+ <%= form_for([@batch, @batch.lista_embalagens.build]) do |f| %>
+ 
+ <div class="field">
+   <%= f.hidden_field :batch_id %>
+ </div>
 
 
+  <div class="field">
+    <%= f.label :qtde %><br>
+    <%= f.number_field :qtde %>
+  </div>
+  <div class="field">
+    <%= f.label :embalagem_id %><br>
+    <%= f.text_field :embalagem_id %>
+	<%= f.collection_select(:embalagem_id, Embalagem.all.order(:id), :id, :tipo, {:prompt => 'Selecione'})%>
+
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 
 

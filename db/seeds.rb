@@ -29,6 +29,16 @@ Material.create(  tipo: 'Plástico')
 Material.create(  tipo: 'Vidro')
 Material.create(  tipo: 'Pet')
 
+Embalagem.create( volume: 1 , unidade_id: 1, tipo_id: 1 , material_id: 1)
+Embalagem.create( volume: 2 , unidade_id: 1, tipo_id: 1 , material_id: 1)
+Embalagem.create( volume: 5 , unidade_id: 1, tipo_id: 2 , material_id: 1)
+Embalagem.create( volume: 20 , unidade_id: 1, tipo_id: 4 , material_id: 1)
+Embalagem.create( volume: 50 , unidade_id: 1, tipo_id: 3 , material_id: 1)
+Embalagem.create( volume: 100 , unidade_id: 1, tipo_id: 3 , material_id: 1)
+Embalagem.create( volume: 200 , unidade_id: 1, tipo_id: 3 , material_id: 1)
+
+
+
 
 
 

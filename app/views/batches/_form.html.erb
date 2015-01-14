@@ -32,15 +32,23 @@
   </div>
   
   
-  
-
-  
-  
   <div class="field">
     <%= f.label :formula_id, 'Formula a ser processada' %><br>
 	<%= f.collection_select(:formula_id ,  Formula.all.order(:id), :id, :nome, {:prompt => "Selecione a formula"})%> 
 
   </div>
+  
+  
+  <div class="field">
+    <%= f.label :entregue%><br>
+    <%= f.text_field :entregue %>
+	<%= f.check_box :entregue %> <br />
+ 
+ 
+   </div>
+  
+  
+  
 
   <div class="actions">
     <%= f.submit %>

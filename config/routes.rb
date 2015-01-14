@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :saidas
+
+  resources :entradas
+
   resources :lista_embalagens do
     resources :batches
     resources :embalagens
@@ -28,12 +32,12 @@ Rails.application.routes.draw do
     resources :mps
     resources :lista_prods
   end
-  
-  
 
+  resources :mps do
+    resources :entradas
+    resources :saidas
 
-
-  resources :mps 
+  end
 
 
   resources :unidades

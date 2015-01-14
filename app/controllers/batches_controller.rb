@@ -51,6 +51,6 @@ class BatchesController < ApplicationController
     end
 
     def batch_params
-      params.require(:batch).permit(:data, :numero, :data_entrega, :volume, :formula_id, :mp_id)
+      params.require(:batch).permit(:data, :entregue, :numero, :data_entrega, :volume, :formula_id, :mp_id)
     end
 end

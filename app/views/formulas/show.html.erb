@@ -37,7 +37,7 @@
   <tbody>
     <% @formula.lista_prods.each do |lista_prod| %>
       <tr>	  
-	    <td><%= lista_prod.formula.nome%></td>
+	      <td><%= lista_prod.formula.nome%></td>
         <td><%= lista_prod.mp.nome %></td>
         <td><%= lista_prod.qtde %> ml</td>
         <td><%= link_to 'Editar', edit_lista_prod_path(lista_prod) %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150112131022) do
+ActiveRecord::Schema.define(version: 20150113183112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150112131022) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "numero"
+    t.boolean  "entregue"
   end
 
   add_index "batches", ["formula_id"], name: "index_batches_on_formula_id", using: :btree
@@ -43,6 +44,20 @@ ActiveRecord::Schema.define(version: 20150112131022) do
   add_index "embalagens", ["material_id"], name: "index_embalagens_on_material_id", using: :btree
   add_index "embalagens", ["tipo_id"], name: "index_embalagens_on_tipo_id", using: :btree
   add_index "embalagens", ["unidade_id"], name: "index_embalagens_on_unidade_id", using: :btree
+
+  create_table "entradas", force: true do |t|
+    t.integer  "mp_id"
+    t.date     "receb"
+    t.decimal  "qtde"
+    t.string   "nf"
+    t.string   "lote"
+    t.date     "validade"
+    t.text     "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entradas", ["mp_id"], name: "index_entradas_on_mp_id", using: :btree
 
   create_table "formulas", force: true do |t|
     t.string   "nome"
@@ -99,6 +114,20 @@ ActiveRecord::Schema.define(version: 20150112131022) do
   end
 
   add_index "mps", ["unidade_id"], name: "index_mps_on_unidade_id", using: :btree
+
+  create_table "saidas", force: true do |t|
+    t.integer  "mp_id"
+    t.date     "exped"
+    t.decimal  "qtde"
+    t.string   "nf"
+    t.string   "lote"
+    t.date     "validade"
+    t.text     "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "saidas", ["mp_id"], name: "index_saidas_on_mp_id", using: :btree
 
   create_table "tipos", force: true do |t|
     t.string   "tipo"

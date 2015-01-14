@@ -15,6 +15,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+
       <th>Data</th>
 	  <th>Batch -No </th>
 	  <th>Produto</th>
@@ -27,8 +28,13 @@
   </thead>
 
   <tbody>
-    <% @batches.each do |batch| %>
+          <% @batches.each do |batch| %>
       <tr>
+		  
+
+
+	   
+
         <td><%= l(batch.data) %></td>
 		<td><%= batch.numero%></td>
 		<td><%= batch.formula.nome%>
