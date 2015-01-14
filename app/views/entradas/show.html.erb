@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mp:</strong>
+  <%= @entrada.mp.nome %>
+</p>
+
+<p>
+  <strong>Receb:</strong>
+  <%= @entrada.receb %>
+</p>
+
+<p>
+  <strong>Qtde:</strong>
+  <%= @entrada.qtde %>
+</p>
+
+<p>
+  <strong>Nf:</strong>
+  <%= @entrada.nf %>
+</p>
+
+<p>
+  <strong>Lote:</strong>
+  <%= @entrada.lote %>
+</p>
+
+<p>
+  <strong>Validade:</strong>
+  <%= @entrada.validade %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @entrada.obs %>
+</p>
+
+<%= link_to 'Edit', edit_entrada_path(@entrada) %> |
+<%= link_to 'Back', entradas_path %>

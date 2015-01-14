@@ -1,0 +1,2 @@
+module EntradasHelper
+end

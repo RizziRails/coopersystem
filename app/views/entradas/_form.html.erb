@@ -1,0 +1,46 @@
+<%= form_for(@entrada) do |f| %>
+  <% if @entrada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrada.errors.count, "error") %> prohibited this entrada from being saved:</h2>
+
+      <ul>
+      <% @entrada.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mp_id, 'Matéria Prima' %><br>
+    <%= f.collection_select(:mp_id ,  Mp.all.order(:id), :id, :nome, {:prompt => "Selecione a Materia Prima"})%> 
+
+  </div>
+  <div class="field">
+    <%= f.label :receb, 'Data do recebimento' %><br>
+    <%= f.date_select :receb %>
+  </div>
+  <div class="field">
+    <%= f.label :qtde %><br>
+    <%= f.text_field :qtde %>
+  </div>
+  <div class="field">
+    <%= f.label :nf, 'Número da Nota Fiscal' %><br>
+    <%= f.text_field :nf %>
+  </div>
+  <div class="field">
+    <%= f.label :lote %><br>
+    <%= f.text_field :lote %>
+  </div>
+  <div class="field">
+    <%= f.label :validade , 'Validade do LOTE' %><br>
+    <%= f.date_select :validade %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+  <table class="table table-striped">
+   <thead>
+    <tr>
+	  <th>Lote</th>
+	  <th>Nf</th>
+      <th>Receb</th>
+      
+    
+      <th>Validade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+    <tbody>
+           <% @mp.entradas.each do |entrada| %>
+      <tr>
+		<td><%= entrada.lote %></td>
+	    <td><%= entrada.nf %></td>
+        <td><%= l(entrada.receb) %></td>
+        <td><%= l(entrada.validade) %></td>
+        <td><%= link_to 'Mostrar', entrada  %></td>
+        <td><%= link_to 'Editar', edit_entrada_path(entrada) %></td>
+        <td><%= link_to 'Deletar', entrada, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+     </tr>
+           <% end %>
+    </tbody>
+  </table>

@@ -1,0 +1,55 @@
+
+
+<td>
+  <ul class='nav nav-pills'>
+    <li class='active'>
+      <%= link_to '+', new_entrada_path %>
+    </li>
+  </ul>
+</td>
+
+
+
+<h1>Lista de entradas</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Mp</th>
+      <th>Receb</th>
+      <th>Qtde</th>
+      <th>Nf</th>
+      <th>Lote</th>
+      <th>Validade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entradas.each do |entrada| %>
+      <tr>
+        <td><%= entrada.mp.nome %></td>
+        <td><%= l(entrada.receb) %></td>
+        <td><%= entrada.qtde %> </td>
+        <td><%= entrada.nf %></td>
+        <td><%= entrada.lote %></td>
+        <td><%= l(entrada.validade) %></td>
+
+
+        <td><ul class="nav nav-pills">
+             <li class="active"><%= link_to 'Mostrar', entrada  %></a></li> </ul></td>
+
+<td><ul class="nav nav-pills">
+             <li class="active"><%= link_to 'Editar', edit_entrada_path(entrada) %></a></li> </ul></td>
+
+             <td><ul class="nav nav-pills"><li class="active"><%= link_to 'Deletar', entrada, method: :delete, data: { confirm: 'Are you sure?' } %>  </li></ul></td>
+
+       
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
