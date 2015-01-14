@@ -7,7 +7,7 @@
 #
 # Apartment Configuration
 #
-Apartment.configure do |config|
+#Apartment.configure do |config|
 
   # These models will not be multi-tenanted,
   # but remain in the global (public) namespace
@@ -17,16 +17,16 @@ Apartment.configure do |config|
   #
   # config.excluded_models = %w{Tenant}
   #
-  config.excluded_models = %w{}
+##config.excluded_models = %w{}
 
   # use postgres schemas?
-  config.use_schemas = true
+##config.use_schemas = true
 
   # use raw SQL dumps for creating postgres schemas? (only appies with use_schemas set to true)
   #config.use_sql = true
 
   # configure persistent schemas (E.g. hstore )
-  config.persistent_schemas = ['shared_extensions']
+##config.persistent_schemas = ['shared_extensions']
   # config.persistent_schemas = %w{ hstore }
 
   # add the Rails environment to database names?
