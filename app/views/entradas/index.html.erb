@@ -22,6 +22,7 @@
       <th>Nf</th>
       <th>Lote</th>
       <th>Validade</th>
+	  <th>Status</th>
      
 	  
       <th colspan="3"></th>
@@ -41,7 +42,7 @@
           <%= image_tag "sem_verm.jpg" %>
           <% else  %>
           <%= image_tag "sem_lar.jpg" %>
-     <% end %>
+    <% end %>
         </th>
         
 
@@ -51,6 +52,7 @@
         <td><%= entrada.nf %></td>
         <td><%= entrada.lote %></td>
         <td><%= l(entrada.validade) %></td>
+		    <td><%= entrada.status.tipo %></td>
         
 
 
