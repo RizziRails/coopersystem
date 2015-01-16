@@ -3,7 +3,7 @@
 # require 'apartment/elevators/generic'
 # require 'apartment/elevators/domain'
 
-require 'apartment/elevators/subdomain'
+##require 'apartment/elevators/subdomain'
 
 #
 # Apartment Configuration
@@ -36,7 +36,7 @@ config.persistent_schemas = ['shared_extensions']
 
   # supply list of database names for migrations to run on
   #config.tenant_names = lambda{ ToDo_Tenant_Or_User_Model.pluck :database }
-   config.tenant_names = [ 'teste', 'cooperuni','lever']
+  ##config.tenant_names = [ 'teste', 'cooperuni','lever']
   ##config.tenant_names = lambda{ Customer.pluck(:teste, :cooperuni, :lever) }
 end
 
@@ -49,4 +49,4 @@ end
 
 # Rails.application.config.middleware.use 'Apartment::Elevators::Domain'
 
-   Rails.application.config.middleware.use 'Apartment::Elevators::Subdomain'
+ ##  Rails.application.config.middleware.use 'Apartment::Elevators::Subdomain'
