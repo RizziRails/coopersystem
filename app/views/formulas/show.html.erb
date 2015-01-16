@@ -71,7 +71,7 @@
  
  <div class="field">
    <%= f.label :mp_id, 'Matéria Prima' %><br>
-   <%= f.collection_select(:mp_id ,  Mp.all.order(:id), :id, :nome, {:prompt => "Selecione a Matéria Prima"})%> 
+   <%= f.collection_select(:mp_id ,  Mp.all.order(:id), :id, :nome, {:prompt => "Selecione a MP"})%> 
  </div>
  <div class="field">
    <%= f.label :qtde,'Quantidade em mls'%><br>
