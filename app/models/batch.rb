@@ -13,12 +13,13 @@ class Batch < ActiveRecord::Base
   
 
   
-validates_presence_of :volume, :numero
+validates_presence_of :volume, :numero, :formula_id
 
 validates_numericality_of :volume
 
 
-validates_presence_of :formula_id
+
+
 
 
   

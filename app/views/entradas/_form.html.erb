@@ -36,6 +36,13 @@
     <%= f.label :validade , 'Validade do LOTE' %><br>
     <%= f.date_select :validade %>
   </div>
+  
+  <div class="field">
+    <%= f.label :status  %><br>
+	<%= f.collection_select(:status_id, Status.all.order(:tipo), :id, :tipo, {:prompt => true, :selected => 1})%>
+  </div>
+  
+  
   <div class="field">
     <%= f.label :obs %><br>
     <%= f.text_area :obs %>

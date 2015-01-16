@@ -37,6 +37,11 @@ Embalagem.create( volume: 50 , unidade_id: 1, tipo_id: 3 , material_id: 1)
 Embalagem.create( volume: 100 , unidade_id: 1, tipo_id: 3 , material_id: 1)
 Embalagem.create( volume: 200 , unidade_id: 1, tipo_id: 3 , material_id: 1)
 
+Status.create( tipo: 'Em inspeção' )
+Status.create( tipo: 'Liberado p/uso' )
+Status.create( tipo: 'Rejeitado' )
+Status.create( tipo: 'Liberado c/restrições')
+
 
 
 

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Receb:</strong>
-  <%= @entrada.receb %>
+  <%= l(@entrada.receb) %>
 </p>
 
 <p>
@@ -27,13 +27,22 @@
 
 <p>
   <strong>Validade:</strong>
-  <%= @entrada.validade %>
+  <%= l(@entrada.validade) %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @entrada.status.tipo %>
 </p>
 
 <p>
   <strong>Obs:</strong>
   <%= @entrada.obs %>
 </p>
+
+
+
+
 
 <%= link_to 'Edit', edit_entrada_path(@entrada) %> |
 <%= link_to 'Back', entradas_path %>

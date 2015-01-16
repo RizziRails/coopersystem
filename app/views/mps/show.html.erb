@@ -30,6 +30,7 @@
    <table class="table table-striped">
    <thead>
     <tr>
+      <th>Status</th>
 	  <th>Lote</th>
 	  <th>NF de ent</th>
     <th>Data Entrada</th>
@@ -40,8 +41,21 @@
     <tbody>
            <% @mp.entradas.each do |entrada| %>
       <tr>
-		<td><%= entrada.lote %></td>
-	    <td><%= entrada.nf %></td>
+
+        <td>
+          <%if entrada.status_id == 1 %>
+          <%= image_tag "sem_amar.jpg" %>
+          <% elsif entrada.status_id == 2 %>
+          <%= image_tag "sem_verde.jpg" %>
+          <% elsif entrada.status_id == 3 %>
+          <%= image_tag "sem_verm.jpg" %>
+          <% else  %>
+          <%= image_tag "sem_azul.jpg" %>
+
+          <% end %>
+        </td>
+		    <td><%= entrada.lote %></td>
+	      <td><%= entrada.nf %></td>
         <td><%= l(entrada.receb) %></td>
         <td><%= l(entrada.validade) %></td>
         <td><%= link_to 'Mostrar', entrada  %></td>

@@ -58,6 +58,6 @@ class EntradasController < ApplicationController
     end
 
     def entrada_params
-      params.require(:entrada).permit(:mp_id, :receb, :qtde, :nf, :lote, :validade, :obs)
+      params.require(:entrada).permit(:mp_id, :receb, :qtde, :nf, :lote, :validade, :status_id, :obs)
     end
 end
