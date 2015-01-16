@@ -156,7 +156,6 @@
   </div>
   <div class="field">
     <%= f.label :embalagem_id %><br>
-    <%= f.text_field :embalagem_id %>
 	<%= f.collection_select(:embalagem_id, Embalagem.all.order(:id), :id, :tipo, {:prompt => 'Selecione'})%>
 
 
