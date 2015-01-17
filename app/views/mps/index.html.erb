@@ -33,6 +33,8 @@
 
       </tr>
     <% end %>
+
+    <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
   </tbody>
 </table>
 
