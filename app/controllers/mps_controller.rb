@@ -4,7 +4,7 @@ class MpsController < ApplicationController
   respond_to :html
 
   def index
-    @mps = Mp.all.order(:nome)
+    @mps = Mp.all.order(:nome).page params['page']
     respond_with(@mps)
   end
 

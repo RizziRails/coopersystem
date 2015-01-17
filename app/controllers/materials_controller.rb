@@ -4,7 +4,7 @@ class MaterialsController < ApplicationController
   respond_to :html
 
   def index
-    @materials = Material.all
+    @materials = Material.all.page params['page']
     respond_with(@materials)
   end
 
