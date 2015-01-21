@@ -4,6 +4,7 @@ class Mp < ActiveRecord::Base
   has_many :batches
   has_many :entradas, dependent: :destroy
   has_many :saidas , dependent: :destroy
+  has_many :saidafisicas
   
  
   

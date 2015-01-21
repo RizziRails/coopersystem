@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :saidafisicas
+
   resources :statuses
 
   resources :saidas

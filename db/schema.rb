@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116010320) do
+ActiveRecord::Schema.define(version: 20150121010330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,21 @@ ActiveRecord::Schema.define(version: 20150116010320) do
   end
 
   add_index "mps", ["unidade_id"], name: "index_mps_on_unidade_id", using: :btree
+
+  create_table "saidafisicas", force: true do |t|
+    t.integer  "mp_id"
+    t.integer  "batch_id"
+    t.date     "exped"
+    t.decimal  "qtde"
+    t.string   "lote"
+    t.string   "validade"
+    t.text     "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "saidafisicas", ["batch_id"], name: "index_saidafisicas_on_batch_id", using: :btree
+  add_index "saidafisicas", ["mp_id"], name: "index_saidafisicas_on_mp_id", using: :btree
 
   create_table "saidas", force: true do |t|
     t.integer  "mp_id"

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mp_id: 
+  batch_id: 
+  exped: 2015-01-20
+  qtde: 9.99
+  lote: MyString
+  validade: MyString
+  obs: MyText
+
+two:
+  mp_id: 
+  batch_id: 
+  exped: 2015-01-20
+  qtde: 9.99
+  lote: MyString
+  validade: MyString
+  obs: MyText

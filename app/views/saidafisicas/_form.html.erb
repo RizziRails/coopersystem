@@ -1,0 +1,54 @@
+<%= form_for(@saidafisica) do |f| %>
+  <% if @saidafisica.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@saidafisica.errors.count, "error") %> prohibited this saidafisica from being saved:</h2>
+
+      <ul>
+      <% @saidafisica.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mp_id, 'Materia Prima' %><br>
+    <%= f.collection_select(:mp_id ,  Mp.all.order(:id), :id, :nome, {:prompt => "Selecione a Matéria Prima"})%>
+  </div>
+
+  <div class="field">
+    <%= f.label :lote %><br>
+    <%= f.text_field :lote %>
+  </div>
+
+  <div class="field">
+    <%= f.label :batch_id , 'Batch'%><br>
+    <%= f.text_field :batch_id %>
+
+  </div>
+
+  
+
+
+
+  <div class="field">
+    <%= f.label :exped, 'Saída'%><br>
+    <%= f.date_select :exped %>
+  </div>
+  <div class="field">
+    <%= f.label :qtde %><br>
+    <%= f.text_field :qtde %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :validade %><br>
+    <%= f.text_field :validade %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br>
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

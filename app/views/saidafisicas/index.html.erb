@@ -1,0 +1,75 @@
+<td>
+  <ul class= "nav nav-pills">
+    <li class= "active">
+      <%= link_to '+', new_saidafisica_path %>
+
+    </li>
+  </ul>
+</td>
+
+
+<h1>Lista de Saídas Físicas</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Mp</th>
+      <th>Lote</th>
+      <th>Batch</th>
+      <th>Exped</th>
+      <th>Qtde</th>
+      <th>Lote</th>
+      <th>Validade</th>
+  
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saidafisicas.each do |saidafisica| %>
+      <tr>
+        <td><%= saidafisica.mp %></td>
+        <td><%= saidafisica.lote %></td>
+        <td><%= saidafisica.batch %></td>
+        <td><%= saidafisica.exped %></td>
+        <td><%= saidafisica.qtde %></td>
+        
+        <td><%= saidafisica.validade %></td>
+    
+
+        <td>
+          <ul class="nav nav-pills">
+            <li class="active">
+              <%= link_to 'Show', saidafisica %>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul class= "nav nav-pills">
+            <li class= "active">
+              <%= link_to 'Show', saidafisica %>              
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul class="nav nav-pills">
+            <li class="active">
+              <%= link_to 'Edit', edit_saidafisica_path(saidafisica) %>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul class="nav nav-pills">
+            <li class="active">
+              <%= link_to 'Destroy', saidafisica, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li>
+          </ul>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
