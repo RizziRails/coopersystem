@@ -108,7 +108,7 @@
     <% @batch.lista_embalagens.each do |lista_emb| %>
       <tr>    
         <td><%= lista_emb.qtde%> litros</td>
-        <td><%= lista_emb.embalagem.tipo.tipo %> de <%= lista_emb.embalagem.volume%> <%= lista_emb.embalagem.unidade.nome%></td>
+        <td><%= lista_emb.embalagem.tipo %> de <%= lista_emb.embalagem.volume%> <%= lista_emb.embalagem.unidade.nome%></td>
         <td><%= lista_emb.embalagem.material.tipo %> </td>
         <td><%= lista_emb.qtde / lista_emb.embalagem.volume %></td>
         

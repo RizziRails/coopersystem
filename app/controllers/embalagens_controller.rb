@@ -42,6 +42,6 @@ class EmbalagensController < ApplicationController
     end
 
     def embalagem_params
-      params.require(:embalagem).permit(:volume, :caracteristicas, :tipo_id, :material_id, :unidade_id)
+      params.require(:embalagem).permit(:volume, :caracteristicas, :tipo_id, :material_id, :unidade_id, :tipo)
     end
 end

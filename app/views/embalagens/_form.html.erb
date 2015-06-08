@@ -21,8 +21,8 @@
   </div>
   
   <div class="field">
-    <%= f.label :tipo_id %><br>
-    <%= f.collection_select(:tipo_id ,  Tipo.all.order(:id), :id, :tipo, {:prompt => "Selecione o tipo de embalagem"})%>
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
   </div>
   <div class="field">
     <%= f.label :material_id %><br>

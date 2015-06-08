@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121010330) do
+ActiveRecord::Schema.define(version: 20150122154121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,15 +34,14 @@ ActiveRecord::Schema.define(version: 20150121010330) do
   create_table "embalagens", force: true do |t|
     t.decimal  "volume"
     t.text     "caracteristicas"
-    t.integer  "tipo_id"
     t.integer  "material_id"
     t.integer  "unidade_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tipo"
   end
 
   add_index "embalagens", ["material_id"], name: "index_embalagens_on_material_id", using: :btree
-  add_index "embalagens", ["tipo_id"], name: "index_embalagens_on_tipo_id", using: :btree
   add_index "embalagens", ["unidade_id"], name: "index_embalagens_on_unidade_id", using: :btree
 
   create_table "entradas", force: true do |t|
