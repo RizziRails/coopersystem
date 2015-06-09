@@ -16,6 +16,7 @@ gem 'pundit'
 gem 'apartment'
 gem 'will_paginate-bootstrap'
 
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -25,4 +26,5 @@ group :development do
 end
 group :production do
   gem 'thin'
+  gem 'rails_12factor'
 end
