@@ -78,6 +78,8 @@ GEM
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     pg (0.18.1)
+    puma (2.11.3)
+      rack (>= 1.1, < 2.0)
     pundit (0.3.0)
       activesupport (>= 3.0.0)
     quiet_assets (1.1.0)
@@ -164,6 +166,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  puma
   pundit
   quiet_assets
   rails (= 4.1.8)

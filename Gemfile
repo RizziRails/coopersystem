@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+
 gem 'rails', '4.1.8'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -23,8 +23,13 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'puma'
 end
 group :production do
   gem 'thin'
   gem 'rails_12factor'
+  gem 'puma'
 end
+
+
+ruby '2.1.5'
