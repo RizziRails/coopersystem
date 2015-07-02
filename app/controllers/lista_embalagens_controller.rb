@@ -1,4 +1,5 @@
 class ListaEmbalagensController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   before_action :set_lista_embalagem, only: [:show, :edit, :update, :destroy]
   
 

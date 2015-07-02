@@ -15,6 +15,7 @@ gem 'pg'
 gem 'pundit'
 gem 'apartment'
 gem 'will_paginate-bootstrap'
+gem 'puma'
 
 
 group :development do
@@ -23,12 +24,12 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'puma'
+
 end
 group :production do
   gem 'thin'
   gem 'rails_12factor'
-  gem 'puma'
+
 end
 
 

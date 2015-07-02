@@ -1,4 +1,5 @@
 class TiposController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   before_action :set_tipo, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

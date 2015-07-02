@@ -1,4 +1,5 @@
 class ListaProdsController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   before_action :set_lista_prod, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
