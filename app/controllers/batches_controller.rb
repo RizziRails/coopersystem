@@ -1,5 +1,5 @@
 class BatchesController < ApplicationController
-  skip_before_filter  :verify_authenticity_token
+  skip_before_action  :verify_authenticity_token
   before_action :set_batch, only: [:show, :edit, :update, :destroy]
   before_action :set_lista, only: [:show]
   
