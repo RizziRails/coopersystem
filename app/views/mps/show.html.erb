@@ -44,13 +44,17 @@
 
         <td>
           <%if entrada.status_id == 1 %>
-          <%= image_tag "sem_amar.jpg" %>
+		  <p align='center'>  <img src="http://cooper1.s3.amazonaws.com/sem_amar.jpg" /> </p>
+         
           <% elsif entrada.status_id == 2 %>
-          <%= image_tag "sem_verde.jpg" %>
+		  <p align='center'>  <img src="http://cooper1.s3.amazonaws.com/sem_verde.jpg" /> </p>
+        
           <% elsif entrada.status_id == 3 %>
-          <%= image_tag "sem_verm.jpg" %>
+		  <p align='center'>  <img src="http://cooper1.s3.amazonaws.com/sem_verm.jpg" /> </p>
+        
           <% else  %>
-          <%= image_tag "sem_azul.jpg" %>
+		  <p align='center'>  <img src="http://cooper1.s3.amazonaws.com/sem_azul.jpg" /> </p>
+    
 
           <% end %>
         </td>

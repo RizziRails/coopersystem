@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  skip_before_action  :verify_authenticity_token
+  
+  skip_before_action :verify_authenticity_token
+  protect_from_forgery with: :exception
+  
+
   before_filter :authenticate_user!
   after_action :verify_authorized
 
