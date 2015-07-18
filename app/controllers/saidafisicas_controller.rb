@@ -3,6 +3,13 @@ class SaidafisicasController < ApplicationController
   before_action :set_saidafisica, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
+  
+  
+  
+  
+  def saldo
+     @saidafisica = Saidafisica.sum(params[:id])
+  end
 
   def index
     @saidafisicas = Saidafisica.all

@@ -22,9 +22,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :batch_id , 'Batch'%><br>
-    <%= f.text_field :batch_id %>
-
+    <%= f.label :batch_id %><br>	
+	<%= f.collection_select(:batch_id , Batch.all.order(:id), :id, :numero, {:prompt => "Selecione o Batch"})%> 
   </div>
 
   

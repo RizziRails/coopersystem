@@ -3,7 +3,7 @@ class Entrada < ActiveRecord::Base
   belongs_to :status
 
   validates_presence_of :mp_id, :qtde, :nf, :lote, :status 
-  validates_numericality_of :qtde, :nf
+  validates_numericality_of :qtde, :nf 
   
   
   validate :data_invalida
