@@ -11,10 +11,9 @@
 
 
 
+	 &nbsp;&nbsp;&nbsp;&nbsp;	
+ <p align='center'>  <img src="http://cooper1.s3.amazonaws.com/Administrador2.jpeg"  /> </p>
     
- 	 &nbsp;&nbsp;&nbsp;&nbsp;	
-		<%= image_tag "Administrador2.jpeg" %>
-	
 		
 
 
@@ -24,16 +23,18 @@
       <%elsif%>
        <% if current_user.vip? %>
 	   
-				&nbsp;&nbsp;&nbsp;&nbsp;	
-  		  <%= image_tag "vip_user.jpeg" %>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				
+				<p align='center'>  <img src="http://cooper1.s3.amazonaws.com/vip_user.jpeg"  /> </p>
  
  
       <% else %>
   
  			<div class="body">
             	&nbsp;&nbsp;&nbsp;&nbsp;	
-
-			<%= image_tag "usuario.jpg" %>
+				
+				<p align='center'>  <img src="http://cooper1.s3.amazonaws.com/usuario.jpg"  /> </p>
 	
 	
   	  <% end %>
