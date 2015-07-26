@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  enum role: [:user, :user_quimico , :user_comprador, :user_vendedor, :user_administrativo, :logistica, :vip_qualidade, :vip_producao, :vip_logistica, :admin , :mater ]
+  enum role: [:user, :user_quimico , :user_comprador, :user_vendedor, :user_administrativo, :vip_qual, :vip_prod, :vip_log, :vip, :admin , :mater ]
   
   
   after_initialize :set_default_role, :if => :new_record?
