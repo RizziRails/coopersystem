@@ -33,4 +33,4 @@ group :production do
 end
 
 
-ruby '2.1.5'
+ruby '2.0.0'
